@@ -59,3 +59,35 @@ top: 实时动态查看进程 P：cpu占用     M：内存占用      q:退出
 kill:根据PID，停止程序    获取PID：ps aux | grep sleep
 
 pkill:根据名字终止程序   pkill sleep
+
+## Day4 实操汇总
+# apt：系统软件安装
+sudo apt update
+sudo apt install vim
+
+# 文件夹创建
+mkdir -p ~/robot/arm_ws/lib
+
+# conda 虚拟环境
+conda create -n arm_env python=3.9
+conda activate arm_env
+pip install numpy
+pip list
+conda deactivate
+
+# export 临时环境变量
+export LD_LIBRARY_PATH=~/robot/arm_ws/lib:$LD_LIBRARY_PATH
+echo $LD_LIBRARY_PATH
+
+# vim 编辑配置文件
+vim ~/.bashrc
+# i编辑，Esc，:wq保存退出
+
+# 加载配置，永久配置生效
+source ~/.bashrc
+
+# alias自定义快捷命令
+alias arm='cd ~/robot/arm_ws'
+arm
+pwd
+
